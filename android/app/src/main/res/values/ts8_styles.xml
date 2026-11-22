@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Settings left-pane row: 56dp touch target, accent when selected (design spec §4, §10). -->
+  <style name="Ts8SettingsSection">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/ts8_touch_min</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:paddingStart">@dimen/ts8_gap_m</item>
+    <item name="android:paddingEnd">@dimen/ts8_gap_m</item>
+    <item name="android:textColor">@color/ts8_text_secondary</item>
+    <item name="android:textSize">@dimen/ts8_text_secondary</item>
+    <item name="android:background">?attr/selectableItemBackground</item>
+    <item name="android:clickable">true</item>
+    <item name="android:focusable">true</item>
+  </style>
+</resources>

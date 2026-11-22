@@ -1,0 +1,10 @@
+• OSM-kaartgegevens van 8 juli
+• Verbeterde zoekfunctie voor Arabisch
+• Toon camping- en resortgebieden, zie industriële zones eerder
+• Negeer geen secundaire wegen bij rotondes
+• Nieuwe pictogrammen voor laadstations
+• Sla hoogtegegevens op bij het opslaan van route
+• "Mislukte download opnieuw proberen"-knop gerepareerd
+• Gedupliceerde OSM-bewerkingen opgelost
+
+…meer op omaps.org/news

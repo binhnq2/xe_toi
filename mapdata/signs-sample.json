@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-21T14:30:00Z",
+  "signs": [
+    { "id": "vn-hn-001", "lat": 21.028511, "lon": 105.804817, "type": "speed_limit", "value": 60, "name": "Hà Nội - phố cổ 60 km/h" },
+    { "id": "vn-hn-002", "lat": 21.005000, "lon": 105.841000, "type": "camera", "value": 0, "name": "Camera - Đại Cồ Việt" },
+    { "id": "vn-hn-003", "lat": 21.036700, "lon": 105.782000, "type": "hazard", "value": 0, "name": "Điểm đen - đường trơn" },
+    { "id": "vn-hn-004", "lat": 21.013000, "lon": 105.852000, "type": "toll", "value": 0, "name": "Trạm thu phí Pháp Vân" },
+    { "id": "vn-sg-001", "lat": 10.776889, "lon": 106.700806, "type": "speed_limit", "value": 50, "name": "TP.HCM - Nguyễn Huệ 50 km/h" },
+    { "id": "vn-sg-002", "lat": 10.795000, "lon": 106.721000, "type": "camera", "value": 0, "name": "Camera - Điện Biên Phủ" },
+    { "id": "vn-dn-001", "lat": 16.047079, "lon": 108.206230, "type": "speed_limit", "value": 80, "name": "Đà Nẵng - QL1A 80 km/h" },
+    { "id": "vn-hp-001", "lat": 20.844912, "lon": 106.688084, "type": "hazard", "value": 0, "name": "Hải Phòng - cầu hẹp" }
+  ]
+}

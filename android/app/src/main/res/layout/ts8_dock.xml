@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shared four-tab dock (design spec §5, §8). Exactly four destinations, no more.
+  Included by Home, Drawer, Music and Assistant so the bar never drifts between screens.
+-->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/ts8_dock_shared"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/ts8_dock_bg"
+  android:gravity="center_vertical"
+  android:orientation="horizontal">
+
+  <LinearLayout
+    android:id="@+id/ts8_dock_map"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/ts8_dock_height"
+    android:layout_weight="1"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:contentDescription="@string/ts8_tab_map"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:importantForAccessibility="no"
+      android:src="@android:drawable/ic_dialog_map"
+      app:tint="@color/ts8_text_secondary" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/ts8_tab_map"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="11sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ts8_dock_music"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/ts8_dock_height"
+    android:layout_weight="1"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:contentDescription="@string/ts8_tab_music"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:importantForAccessibility="no"
+      android:src="@android:drawable/ic_media_play"
+      app:tint="@color/ts8_text_secondary" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/ts8_tab_music"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="11sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ts8_dock_assistant"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/ts8_dock_height"
+    android:layout_weight="1"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:contentDescription="@string/ts8_tab_assistant"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:importantForAccessibility="no"
+      android:src="@android:drawable/ic_btn_speak_now"
+      app:tint="@color/ts8_text_secondary" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/ts8_tab_assistant"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="11sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ts8_dock_apps"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/ts8_dock_height"
+    android:layout_weight="1"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:contentDescription="@string/ts8_tab_apps"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:importantForAccessibility="no"
+      android:src="@android:drawable/ic_menu_sort_by_size"
+      app:tint="@color/ts8_text_secondary" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/ts8_tab_apps"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="11sp" />
+  </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One app-drawer cell: adaptive icon + one-line ellipsized label (design spec §8). -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="?attr/selectableItemBackground"
+  android:gravity="center_horizontal"
+  android:minHeight="@dimen/ts8_touch_drawer"
+  android:orientation="vertical"
+  android:paddingTop="@dimen/ts8_gap_s"
+  android:paddingBottom="@dimen/ts8_gap_s">
+
+  <ImageView
+    android:id="@+id/ts8_app_icon"
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:importantForAccessibility="no"
+    android:scaleType="fitCenter"
+    tools:src="@drawable/ic_app_placeholder" />
+
+  <TextView
+    android:id="@+id/ts8_app_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/ts8_gap_xs"
+    android:ellipsize="end"
+    android:gravity="center"
+    android:maxLines="1"
+    android:paddingStart="@dimen/ts8_gap_xs"
+    android:paddingEnd="@dimen/ts8_gap_xs"
+    android:textColor="@color/ts8_text_primary"
+    android:textSize="11sp"
+    tools:text="Bản đồ" />
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite dimensions (design spec §4).
+
+  Touch targets come straight from the spec: 56dp on Home/Navigation, 64dp in the app drawer.
+  Corner radius 14-18dp, 1dp borders only where needed.
+-->
+<resources>
+  <!-- touch targets -->
+  <dimen name="ts8_touch_min">56dp</dimen>
+  <dimen name="ts8_touch_drawer">64dp</dimen>
+
+  <!-- shape -->
+  <dimen name="ts8_radius">16dp</dimen>
+  <dimen name="ts8_radius_small">14dp</dimen>
+  <dimen name="ts8_radius_pill">28dp</dimen>
+  <dimen name="ts8_border">1dp</dimen>
+
+  <!-- spacing -->
+  <dimen name="ts8_gap_xs">4dp</dimen>
+  <dimen name="ts8_gap_s">8dp</dimen>
+  <dimen name="ts8_gap_m">12dp</dimen>
+  <dimen name="ts8_gap_l">16dp</dimen>
+  <dimen name="ts8_gap_xl">24dp</dimen>
+
+  <!-- layout -->
+  <dimen name="ts8_dock_height">64dp</dimen>
+  <dimen name="ts8_media_row_height">64dp</dimen>
+  <dimen name="ts8_artwork_size">52dp</dimen>
+  <dimen name="ts8_search_pill_height">44dp</dimen>
+  <dimen name="ts8_top_bar_height">56dp</dimen>
+
+  <!-- navigation overlays -->
+  <dimen name="ts8_speed_panel_width">72dp</dimen>
+  <dimen name="ts8_speed_limit_size">56dp</dimen>
+  <dimen name="ts8_route_strip_height">56dp</dimen>
+  <dimen name="ts8_music_bubble_size">56dp</dimen>
+
+  <!-- typography -->
+  <dimen name="ts8_text_primary">24sp</dimen>
+  <dimen name="ts8_text_secondary">15sp</dimen>
+  <dimen name="ts8_text_maneuver">40sp</dimen>
+  <dimen name="ts8_text_speed">32sp</dimen>
+</resources>

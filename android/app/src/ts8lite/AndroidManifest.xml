@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 NAV (ts8Lite flavor) — controlled removal of components at the OS level.
+
+  PROMPT Phase 1: "Tắt cả UI, initialization, JNI/native registration, data/resource
+  packaging khi an toàn; không chỉ ẩn nút."
+
+  Everything disabled here is removed from the packaged APK's merged manifest, so the
+  component cannot be launched by an intent from another app either. Nothing here is
+  merely hidden in the UI.
+-->
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <application>
+
+    <!-- ===== OSM editor / login / upload (Phase 1: disable) ===== -->
+    <activity
+      android:name="app.organicmaps.editor.EditorActivity"
+      tools:node="remove" />
+    <activity
+      android:name="app.organicmaps.editor.ProfileActivity"
+      tools:node="remove" />
+    <activity
+      android:name="app.organicmaps.editor.FeatureCategoryActivity"
+      tools:node="remove" />
+    <activity
+      android:name="app.organicmaps.editor.ReportActivity"
+      tools:node="remove" />
+    <activity
+      android:name="app.organicmaps.editor.OsmLoginActivity"
+      tools:node="remove" />
+
+    <!-- ===== Track recording (Phase 1: disable) ===== -->
+    <service
+      android:name="app.organicmaps.location.TrackRecordingService"
+      tools:node="remove" />
+
+    <!-- ===== Android Auto (Phase 1: disable) ===== -->
+    <service
+      android:name="app.organicmaps.car.CarAppService"
+      tools:node="remove" />
+    <activity
+      android:name="app.organicmaps.car.screens.permissions.RequestPermissionsActivity"
+      tools:node="remove" />
+
+    <!-- Car permissions are meaningless without the CarAppService above. -->
+    <uses-permission
+      android:name="androidx.car.app.NAVIGATION_TEMPLATES"
+      tools:node="remove" />
+    <uses-permission
+      android:name="androidx.car.app.ACCESS_SURFACE"
+      tools:node="remove" />
+
+    <!-- ===== Landscape-only navigation UI (PROMPT Phase 4) ===== -->
+    <!-- The head-unit style layout is designed for 1024x600 / 1280x720 landscape; portrait
+         would crop the turn panel and the summary bar. Forcing it here also prevents a
+         recreate-on-rotate from interrupting navigation. -->
+    <activity
+      android:name="app.organicmaps.MwmActivity"
+      android:screenOrientation="sensorLandscape"
+      tools:replace="android:screenOrientation" />
+    <activity
+      android:name="app.organicmaps.SplashActivity"
+      android:screenOrientation="sensorLandscape"
+      tools:replace="android:screenOrientation" />
+    <activity
+      android:name="app.organicmaps.downloader.DownloaderActivity"
+      android:screenOrientation="sensorLandscape"
+      tools:replace="android:screenOrientation" />
+    <activity
+      android:name="app.organicmaps.search.SearchActivity"
+      android:screenOrientation="sensorLandscape"
+      tools:replace="android:screenOrientation" />
+
+    <!-- ===== TS8 Lite launcher shell (launcher campaign Phase 1) ===== -->
+    <!--
+      HOME + DEFAULT + LAUNCHER are registered only in this flavour. The standard flavours keep a
+      plain LAUNCHER entry so installing TS8 NAV never makes the system ask which launcher to use
+      on someone else's device (audit risk R1).
+
+      Ts8HomeActivity is exported and is the only entry point: Back from it must not leave the user
+      on a blank screen, which is why it calls moveTaskToBack() and launchMode is singleTask.
+    -->
+    <activity
+      android:name="app.organicmaps.launcher.Ts8HomeActivity"
+      android:exported="true"
+      android:launchMode="singleTask"
+      android:stateNotNeeded="true"
+      android:excludeFromRecents="true"
+      android:configChanges="orientation|screenSize|smallestScreenSize|density|screenLayout|uiMode|keyboard|keyboardHidden|navigation"
+      android:screenOrientation="sensorLandscape"
+      android:theme="@style/MwmTheme"
+      android:windowSoftInputMode="stateAlwaysHidden">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.HOME" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name="app.organicmaps.launcher.Ts8AppDrawerActivity"
+      android:exported="false"
+      android:screenOrientation="sensorLandscape"
+      android:windowSoftInputMode="adjustResize" />
+
+    <activity
+      android:name="app.organicmaps.launcher.Ts8MusicActivity"
+      android:exported="false"
+      android:screenOrientation="sensorLandscape" />
+
+    <activity
+      android:name="app.organicmaps.launcher.Ts8AssistantActivity"
+      android:exported="false"
+      android:screenOrientation="sensorLandscape"
+      android:windowSoftInputMode="adjustResize" />
+
+    <!-- Settings 2-pane. The only screen allowed to show ESP32/USB/diagnostics (design spec §10). -->
+    <activity
+      android:name="app.organicmaps.launcher.settings.Ts8SettingsActivity"
+      android:exported="false"
+      android:screenOrientation="sensorLandscape" />
+
+    <!-- The map activity must not be the LAUNCHER entry any more; Home owns that now. -->
+    <activity-alias
+      android:name="app.organicmaps.DownloadResourcesActivity"
+      android:targetActivity="app.organicmaps.SplashActivity"
+      tools:node="remove" />
+
+    <!--
+      Media session access (design spec §7). The platform refuses getActiveSessions() unless a
+      NotificationListenerService is bound and the user has granted notification access. This
+      listener reads nothing from notifications; it is the access token for MediaSessionManager.
+    -->
+    <service
+      android:name="app.organicmaps.launcher.media.Ts8NotificationListener"
+      android:exported="true"
+      android:label="@string/ts8_notification_access_label"
+      android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+      <intent-filter>
+        <action android:name="android.service.notification.NotificationListenerService" />
+      </intent-filter>
+    </service>
+
+  </application>
+</manifest>

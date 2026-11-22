@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite settings, two-pane landscape (design spec §10).
+
+  This is the only screen allowed to show USB/ESP32/Wi-Fi/firmware state. Home and Navigation never
+  do; the launcher layouts contain no such indicator at all.
+
+  The right pane is an empty container: rows are built in code by Ts8SettingsActivity so each one
+  binds to a real Config/TtsPlayer/bookmark value instead of a decorative switch in XML.
+-->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/ts8_bg"
+  android:orientation="horizontal">
+
+  <!-- left pane: section list -->
+  <ScrollView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="0.32"
+    android:background="@color/ts8_surface"
+    android:scrollbars="none">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingTop="@dimen/ts8_gap_l"
+      android:paddingStart="@dimen/ts8_gap_s"
+      android:paddingEnd="@dimen/ts8_gap_s">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ts8_gap_s"
+        android:layout_marginBottom="@dimen/ts8_gap_m"
+        android:text="@string/ts8_settings_title"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_primary"
+        android:textStyle="bold" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_appearance"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_appearance" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_navigation"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_navigation" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_audio"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_audio" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_assistant"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_assistant" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_devices"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_devices" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_signs"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_signs" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_maps"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_maps" />
+
+      <TextView
+        android:id="@+id/ts8_settings_nav_diagnostics"
+        style="@style/Ts8SettingsSection"
+        android:text="@string/ts8_settings_diagnostics" />
+    </LinearLayout>
+  </ScrollView>
+
+  <!-- right pane: rows built in code -->
+  <ScrollView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="0.68"
+    android:scrollbars="none">
+
+    <LinearLayout
+      android:id="@+id/ts8_settings_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="@dimen/ts8_gap_l" />
+  </ScrollView>
+</LinearLayout>

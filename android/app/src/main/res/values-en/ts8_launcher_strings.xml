@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English overrides. Vietnamese is the default in values/. -->
+<resources>
+  <string name="ts8_search_hint">Where do you want to go?</string>
+  <string name="ts8_settings">Settings</string>
+  <string name="ts8_home_work">Go home</string>
+  <string name="ts8_favorites">Favorites</string>
+  <string name="ts8_now_playing">Now playing</string>
+  <string name="ts8_tab_map">Map</string>
+  <string name="ts8_tab_music">Music</string>
+  <string name="ts8_tab_assistant">Assistant</string>
+  <string name="ts8_tab_apps">Apps</string>
+
+  <string name="ts8_media_previous">Previous</string>
+  <string name="ts8_media_play">Play</string>
+  <string name="ts8_media_pause">Pause</string>
+  <string name="ts8_media_next">Next</string>
+  <string name="ts8_media_close">Close</string>
+
+  <string name="ts8_drawer_title">Apps</string>
+  <string name="ts8_drawer_search_hint">Search apps</string>
+  <string name="ts8_drawer_empty">No apps</string>
+  <string name="ts8_drawer_loading">Loadingâ€¦</string>
+  <string name="ts8_drawer_pin">Pin</string>
+  <string name="ts8_drawer_unpin">Unpin</string>
+  <string name="ts8_drawer_hide">Hide</string>
+  <string name="ts8_drawer_app_info">App info</string>
+
+  <string name="ts8_music_title">Music</string>
+  <string name="ts8_music_no_session">No music app is playing.</string>
+  <string name="ts8_music_permission_required">Notification access is required to control music.</string>
+  <string name="ts8_notification_access_label">TS8 NAV media control</string>
+  <string name="ts8_notification_access_open_settings">Grant access</string>
+  <string name="ts8_unit_min">min</string>
+  <string name="ts8_unit_hour">h</string>
+  <string name="ts8_unit_kmh">km/h</string>
+
+  <string name="ts8_nav_eta">ETA</string>
+  <string name="ts8_nav_remaining">Remaining</string>
+  <string name="ts8_nav_distance_label">Distance</string>
+  <string name="ts8_nav_route_menu">Route menu</string>
+  <string name="ts8_nav_mute">Mute guidance</string>
+  <string name="ts8_nav_unmute">Unmute guidance</string>
+  <string name="ts8_nav_recenter">Recenter map</string>
+  <string name="ts8_nav_turn_right">Turn right</string>
+  <string name="ts8_nav_turn_left">Turn left</string>
+  <string name="ts8_nav_turn_slight_right">Keep right</string>
+  <string name="ts8_nav_turn_slight_left">Keep left</string>
+  <string name="ts8_nav_turn_sharp_right">Sharp right</string>
+  <string name="ts8_nav_turn_sharp_left">Sharp left</string>
+  <string name="ts8_nav_turn_uturn">Make a U-turn</string>
+  <string name="ts8_nav_turn_straight">Go straight</string>
+  <string name="ts8_nav_turn_roundabout">Enter the roundabout</string>
+  <string name="ts8_nav_turn_finish">Arrive at the destination</string>
+  <string name="ts8_nav_exit_number">Exit %1$d</string>
+  <string name="ts8_nav_no_gps">Waiting for GPS</string>
+
+  <string name="ts8_settings_title">Settings</string>
+  <string name="ts8_settings_appearance">Appearance</string>
+  <string name="ts8_settings_navigation">Navigation</string>
+  <string name="ts8_settings_audio">Audio</string>
+  <string name="ts8_settings_assistant">Assistant</string>
+  <string name="ts8_settings_devices">Devices</string>
+  <string name="ts8_settings_diagnostics">Diagnostics</string>
+  <string name="ts8_settings_signs">Traffic signs</string>
+
+  <string name="ts8_settings_theme">Theme</string>
+  <string name="ts8_settings_display">Display</string>
+  <string name="ts8_settings_voice">Voice</string>
+  <string name="ts8_theme_light">Light</string>
+  <string name="ts8_theme_dark">Dark</string>
+  <string name="ts8_theme_auto">Automatic</string>
+  <string name="ts8_theme_light_hint">The theme is applied as soon as it is chosen.</string>
+  <string name="ts8_theme_selected_format">âœ“ %1$s</string>
+  <string name="ts8_set_keep_screen_on">Keep the screen on</string>
+  <string name="ts8_set_large_fonts">Large text</string>
+  <string name="ts8_set_zoom_buttons">Map zoom buttons</string>
+  <string name="ts8_set_voice">Spoken guidance</string>
+  <string name="ts8_set_voice_note">Turning this off stops every spoken instruction; the speed warning still shows on screen.</string>
+
+  <string name="ts8_audio_engine">TTS engine</string>
+  <string name="ts8_audio_status">Status</string>
+  <string name="ts8_audio_vietnamese">Vietnamese</string>
+  <string name="ts8_audio_installed">installed</string>
+  <string name="ts8_audio_missing">missing</string>
+  <string name="ts8_audio_problem">Problem</string>
+
+  <string name="ts8_assistant_title">Assistant</string>
+  <string name="ts8_assistant_idle">Tap to speak</string>
+  <string name="ts8_assistant_listening">Listeningâ€¦</string>
+  <string name="ts8_assistant_processing">Processingâ€¦</string>
+  <string name="ts8_assistant_offline">Using offline commands</string>
+  <string name="ts8_assistant_confirm">Confirm</string>
+  <string name="ts8_assistant_cancel">Cancel</string>
+  <string name="ts8_assistant_start">Start</string>
+  <string name="ts8_assistant_offline_note">Offline commands run without network.</string>
+  <string name="ts8_assistant_privacy_note">Online AI is optional; a timeout falls back to offline. No raw audio or transcript is logged by default.</string>
+
+  <string name="ts8_devices_not_running">The ESP32 bridge is not running. The app works fully without it: map, navigation, launcher and media do not depend on it.</string>
+  <string name="ts8_esp32_usb_denied">USB permission was denied</string>
+  <string name="ts8_esp32_detached">Device detached</string>
+  <string name="ts8_esp32_no_device">No ESP32 device attached</string>
+  <string name="ts8_esp32_no_cdc">The device exposes no CDC data interface</string>
+  <string name="ts8_search_unavailable">Search is not available yet</string>
+  <string name="ts8_diagnostics_path">Exported to</string>
+  <string name="ts8_diagnostics_note">Contains build/device/render/GPS/route/voice counters. No location history and no secrets.</string>
+
+  <string name="ts8_signs_count">Markers in the group</string>
+  <string name="ts8_signs_show_on_map">Show signs on the map</string>
+  <string name="ts8_signs_download">Load nearby signs</string>
+  <string name="ts8_signs_hint">Signs, hazards, tolls, fuel, parking and charging points ship with the app. Loading imports the nearest ones as one bookmark category; it works offline.</string>
+  <string name="ts8_signs_downloading">Downloading signsâ€¦</string>
+  <string name="ts8_signs_loading">Loading nearby signsâ€¦</string>
+  <string name="ts8_signs_need_map">Open the map once, then come back: the bookmark layer is only ready after the map core starts.</string>
+  <string name="ts8_signs_imported">%1$d sign markers imported.</string>
+</resources>

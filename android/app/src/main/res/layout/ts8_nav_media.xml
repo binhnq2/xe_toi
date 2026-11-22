@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite media bubble + in-activity panel (design spec §7).
+
+  The bubble is the only media affordance during navigation and never covers the maneuver panel,
+  the speed panel, the speed-limit sign or the route strip: it is pinned to the lower-right, above
+  the route strip, on the opposite side from the speed panel.
+
+  The expanded panel is bounded (max 42% width, 72dp tall) and lives inside the activity, not as a
+  system overlay: the spec forbids SYSTEM_ALERT_WINDOW.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/ts8_nav_media_host"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:clipChildren="false"
+  android:clipToPadding="false"
+  android:clickable="false"
+  android:focusable="false">
+
+  <!-- Collapsed bubble. Hidden whenever there is no session with a title. -->
+  <ImageButton
+    android:id="@+id/ts8_nav_media_bubble"
+    android:layout_width="@dimen/ts8_music_bubble_size"
+    android:layout_height="@dimen/ts8_music_bubble_size"
+    android:layout_marginEnd="@dimen/ts8_gap_l"
+    android:layout_marginBottom="@dimen/ts8_gap_m"
+    android:background="@drawable/ts8_nav_panel"
+    android:contentDescription="@string/ts8_now_playing"
+    android:padding="@dimen/ts8_gap_m"
+    android:src="@drawable/ic_media"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/ts8_nav_route_strip"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:tint="@color/ts8_accent"
+    tools:visibility="visible" />
+
+  <!-- Expanded panel. 42% of the width, 72dp tall, anchored next to the bubble. -->
+  <LinearLayout
+    android:id="@+id/ts8_nav_media_panel"
+    android:layout_width="0dp"
+    android:layout_height="72dp"
+    android:layout_marginEnd="@dimen/ts8_gap_l"
+    android:layout_marginBottom="@dimen/ts8_gap_m"
+    android:background="@drawable/ts8_nav_panel"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ts8_gap_s"
+    android:paddingEnd="@dimen/ts8_gap_xs"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/ts8_nav_route_strip"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintWidth_percent="0.42"
+    tools:visibility="visible">
+
+    <ImageView
+      android:id="@+id/ts8_nav_media_art"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      android:background="@drawable/ts8_round_surface"
+      android:contentDescription="@string/ts8_now_playing"
+      android:scaleType="centerCrop" />
+
+    <TextView
+      android:id="@+id/ts8_nav_media_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/ts8_gap_s"
+      android:layout_weight="1"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:textColor="@color/ts8_text_primary"
+      android:textSize="13sp"
+      tools:text="Chuyến đi" />
+
+    <ImageButton
+      android:id="@+id/ts8_nav_media_prev"
+      android:layout_width="44dp"
+      android:layout_height="44dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:contentDescription="@string/ts8_media_previous"
+      android:src="@android:drawable/ic_media_previous"
+      app:tint="@color/ts8_text_primary" />
+
+    <ImageButton
+      android:id="@+id/ts8_nav_media_play"
+      android:layout_width="44dp"
+      android:layout_height="44dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:contentDescription="@string/ts8_media_play"
+      android:src="@android:drawable/ic_media_play"
+      app:tint="@color/ts8_accent" />
+
+    <ImageButton
+      android:id="@+id/ts8_nav_media_next"
+      android:layout_width="44dp"
+      android:layout_height="44dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:contentDescription="@string/ts8_media_next"
+      android:src="@android:drawable/ic_media_next"
+      app:tint="@color/ts8_text_primary" />
+
+    <ImageButton
+      android:id="@+id/ts8_nav_media_close"
+      android:layout_width="44dp"
+      android:layout_height="44dp"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:contentDescription="@string/ts8_media_close"
+      android:src="@drawable/ic_cancel"
+      app:tint="@color/ts8_text_secondary" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

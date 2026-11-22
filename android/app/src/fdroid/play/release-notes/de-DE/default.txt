@@ -1,0 +1,11 @@
+• OSM-Kartendaten vom 8. Juli
+• Verbesserte Suche für Arabisch
+• Camping- und Feriengebiete anzeigen, Industriezonen früher sehen
+• Nebenstraßen an Kreisverkehren nicht ignorieren
+• Neue Symbole für Ladestationen
+• Höhendaten beim Speichern von Routen speichern
+• "Fehlgeschlagenen Download wiederholen"-Button repariert
+• Doppelte OSM-Bearbeitungen behoben
+• OSM-Anmeldung auf einigen Geräten repariert
+
+…mehr auf omaps.org/de/news

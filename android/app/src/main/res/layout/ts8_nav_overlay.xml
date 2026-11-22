@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite navigation overlay (design spec §6).
+
+  Everything here is positioned against the real screen edges and is fed from runtime navigation
+  state only. The reference screenshot is a design guide: nothing in this file samples it, and no
+  value is hard-coded.
+
+  Layout map:
+    upper-left    maneuver panel (turn icon, distance, instruction, next street)
+    upper-right   right rail: mute + recenter (zoom is optional and disabled by default)
+    lower-left    current speed, then a separate conventional speed-limit sign
+    bottom        route strip: ETA | remaining | distance | route menu
+    over speed    warning banner above the speed panel, never over the route strip
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/ts8_nav_overlay"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:clipChildren="false"
+  android:clipToPadding="false">
+
+  <!-- ============ upper-left: maneuver ============ -->
+  <LinearLayout
+    android:id="@+id/ts8_nav_maneuver"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ts8_gap_l"
+    android:layout_marginTop="@dimen/ts8_gap_l"
+    android:background="@drawable/ts8_nav_panel"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ts8_gap_m"
+    android:paddingTop="@dimen/ts8_gap_s"
+    android:paddingEnd="@dimen/ts8_gap_l"
+    android:paddingBottom="@dimen/ts8_gap_s"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <app.organicmaps.widget.ArrowView
+      android:id="@+id/ts8_nav_turn_icon"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      android:importantForAccessibility="no"
+      android:theme="?navigationTheme"
+      app:tint="@color/ts8_text_primary" />
+
+    <TextView
+      android:id="@+id/ts8_nav_exit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/ts8_gap_s"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="@dimen/ts8_text_secondary"
+      android:visibility="gone"
+      tools:text="Lối ra 3"
+      tools:visibility="visible" />
+
+    <View
+      android:layout_width="@dimen/ts8_border"
+      android:layout_height="48dp"
+      android:layout_marginStart="@dimen/ts8_gap_m"
+      android:layout_marginEnd="@dimen/ts8_gap_m"
+      android:background="@color/ts8_divider" />
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/ts8_nav_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_maneuver"
+        android:textStyle="bold"
+        tools:text="350 m" />
+
+      <TextView
+        android:id="@+id/ts8_nav_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_secondary"
+        tools:text="Rẽ phải" />
+
+      <TextView
+        android:id="@+id/ts8_nav_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_secondary"
+        android:textSize="@dimen/ts8_text_secondary"
+        tools:text="Nguyễn Văn Linh" />
+    </LinearLayout>
+  </LinearLayout>
+
+  <!-- ============ upper-right: mute + recenter ============ -->
+  <LinearLayout
+    android:id="@+id/ts8_nav_right_rail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/ts8_gap_l"
+    android:layout_marginEnd="@dimen/ts8_gap_l"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageButton
+      android:id="@+id/ts8_nav_mute"
+      android:layout_width="@dimen/ts8_touch_min"
+      android:layout_height="@dimen/ts8_touch_min"
+      android:background="@drawable/ts8_nav_panel"
+      android:contentDescription="@string/ts8_nav_mute"
+      android:padding="@dimen/ts8_gap_m"
+      android:src="@drawable/ic_voice_on"
+      app:tint="@color/ts8_text_primary" />
+
+    <ImageButton
+      android:id="@+id/ts8_nav_recenter"
+      android:layout_width="@dimen/ts8_touch_min"
+      android:layout_height="@dimen/ts8_touch_min"
+      android:layout_marginTop="@dimen/ts8_gap_s"
+      android:background="@drawable/ts8_nav_panel"
+      android:contentDescription="@string/ts8_nav_recenter"
+      android:padding="@dimen/ts8_gap_m"
+      android:src="@drawable/ic_location_crosshair"
+      app:tint="@color/ts8_text_primary" />
+  </LinearLayout>
+
+  <!-- ============ lower-left: speed + separate speed-limit sign ============ -->
+  <LinearLayout
+    android:id="@+id/ts8_nav_speed_panel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ts8_gap_l"
+    android:layout_marginBottom="@dimen/ts8_gap_m"
+    android:background="@drawable/ts8_nav_panel"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ts8_gap_m"
+    android:paddingTop="@dimen/ts8_gap_xs"
+    android:paddingEnd="@dimen/ts8_gap_m"
+    android:paddingBottom="@dimen/ts8_gap_xs"
+    app:layout_constraintBottom_toTopOf="@id/ts8_nav_route_strip"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/ts8_nav_speed_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_speed"
+        android:textStyle="bold"
+        tools:text="48" />
+
+      <TextView
+        android:id="@+id/ts8_nav_speed_units"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="@string/ts8_unit_kmh"
+        android:textColor="@color/ts8_text_secondary"
+        android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Conventional circular sign, drawn by the existing view: separate from the number. -->
+    <app.organicmaps.widget.SpeedLimitView
+      android:id="@+id/ts8_nav_speed_limit"
+      style="@style/MwmWidget.SpeedLimit"
+      android:layout_width="@dimen/ts8_speed_limit_size"
+      android:layout_height="@dimen/ts8_speed_limit_size"
+      android:layout_marginStart="@dimen/ts8_gap_m"
+      android:contentDescription="@string/ts8_speed_limit_none_description"
+      android:importantForAccessibility="yes" />
+  </LinearLayout>
+
+  <!-- ============ over-speed warning (never over the route strip) ============ -->
+  <!-- The include carries its own ids; the overlay gives it a distinct instance id so it cannot
+       collide with the legacy navigation frame's copy of the same layout. -->
+  <include
+    android:id="@+id/ts8_nav_speed_warning_host"
+    layout="@layout/layout_nav_speed_warning"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@id/ts8_nav_speed_panel"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <!-- ============ bottom route strip ============ -->
+  <LinearLayout
+    android:id="@+id/ts8_nav_route_strip"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ts8_gap_l"
+    android:layout_marginEnd="@dimen/ts8_gap_l"
+    android:layout_marginBottom="@dimen/ts8_gap_l"
+    android:background="@drawable/ts8_nav_panel"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/ts8_route_strip_height"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ts8_gap_l"
+    android:paddingEnd="@dimen/ts8_gap_s"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/ts8_nav_eta"
+        android:textColor="@color/ts8_text_secondary"
+        android:textSize="12sp" />
+
+      <TextView
+        android:id="@+id/ts8_nav_eta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_primary"
+        android:textStyle="bold"
+        tools:text="15:42" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="@dimen/ts8_border"
+      android:layout_height="32dp"
+      android:background="@color/ts8_divider" />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/ts8_gap_m"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/ts8_nav_remaining"
+        android:textColor="@color/ts8_text_secondary"
+        android:textSize="12sp" />
+
+      <TextView
+        android:id="@+id/ts8_nav_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_primary"
+        android:textStyle="bold"
+        tools:text="18 phút" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="@dimen/ts8_border"
+      android:layout_height="32dp"
+      android:background="@color/ts8_divider" />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/ts8_gap_m"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/ts8_nav_distance_label"
+        android:textColor="@color/ts8_text_secondary"
+        android:textSize="12sp" />
+
+      <TextView
+        android:id="@+id/ts8_nav_distance_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/ts8_text_primary"
+        android:textSize="@dimen/ts8_text_primary"
+        android:textStyle="bold"
+        tools:text="12.4 km" />
+    </LinearLayout>
+
+    <ImageButton
+      android:id="@+id/ts8_nav_route_menu"
+      android:layout_width="@dimen/ts8_touch_min"
+      android:layout_height="@dimen/ts8_touch_min"
+      android:layout_marginStart="@dimen/ts8_gap_s"
+      android:background="?attr/selectableItemBackgroundBorderless"
+      android:contentDescription="@string/ts8_nav_route_menu"
+      android:src="@drawable/ic_more"
+      app:tint="@color/ts8_text_primary" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

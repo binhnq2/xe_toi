@@ -1,0 +1,10 @@
+• Données OSM au 8 juillet
+• Recherche améliorée pour l'arabe
+• Afficher zones de camping et de villégiature, voir zones industrielles plus tôt
+• Ne pas ignorer routes secondaires aux rond-points
+• Nouvelles icônes pour stations de recharge
+• Sauvegarder données d'élévation lors de la sauvegarde d'itinéraire
+• Corrigé bouton "Réessayer le téléchargement échoué"
+• Corrigé éditions OSM dupliquées
+
+…plus sur omaps.org/fr/news

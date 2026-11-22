@@ -1,0 +1,11 @@
+• Datos OSM del 8 julio
+• Búsqueda mejorada para árabe
+• Mostrar áreas camping y resort, ver zonas industriales antes
+• No ignorar carreteras secundarias en rotondas
+• Nuevos iconos para estaciones de carga
+• Guardar datos de elevación al guardar ruta
+• Corregido botón "Reintentar descarga fallida"
+• Corregidas ediciones OSM duplicadas
+• Corregido login OSM en algunos dispositivos
+
+…más en omaps.org/es/news

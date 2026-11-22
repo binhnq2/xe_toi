@@ -1,0 +1,10 @@
+• 8 Temmuz OSM harita verileri
+• Arapça için geliştirilmiş arama
+• Kamp alanları ve tatil bölgelerini göster, endüstriyel bölgeleri daha erken gör
+• Dönel kavşaklarda ikincil yolları görmezden gelme
+• Şarj istasyonları için yeni simgeler
+• Rota kaydederken yükseklik verilerini kaydet
+• "Başarısız indirmeyi yeniden dene" düğmesi düzeltildi
+• Yinelenen OSM düzenlemeleri düzeltildi
+
+…daha fazlası omaps.org/tr/news

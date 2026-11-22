@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Near-opaque navigation panel surface (design spec §4: no blur, 1dp border only). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <solid android:color="@color/ts8_panel_background" />
+  <corners android:radius="@dimen/ts8_radius" />
+  <stroke android:width="@dimen/ts8_border" android:color="@color/ts8_panel_stroke" />
+</shape>

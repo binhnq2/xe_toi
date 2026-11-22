@@ -1,0 +1,11 @@
+• Dati OSM dell'8 luglio
+• Ricerca migliorata per l'arabo
+• Mostra aree campeggio e resort, vedi zone industriali prima
+• Non ignorare strade secondarie alle rotonde
+• Nuove icone per stazioni di ricarica
+• Salva dati elevazione quando salvi percorso
+• Corretto pulsante "Riprova download fallito"
+• Corrette modifiche OSM duplicate
+• Corretto login OSM su alcuni dispositivi
+
+…altro su omaps.org/news

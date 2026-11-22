@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/coordinator"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <RelativeLayout
+    android:id="@+id/map_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+      android:id="@+id/map_fragment_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+    <include
+      android:id="@+id/onmap_downloader"
+      layout="@layout/onmap_downloader"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true" />
+    <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/map_buttons"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+    <include
+      android:id="@+id/position_chooser"
+      layout="@layout/position_chooser" />
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar_with_search"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:visibility="gone"
+      tools:visibility="visible" />
+    <include
+      layout="@layout/routing_plan"
+      android:visibility="invisible" />
+    <include
+      layout="@layout/menu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true" />
+    <include
+      layout="@layout/layout_nav"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/toolbar"
+      android:paddingBottom="@dimen/margin_base"
+      android:visibility="invisible" />
+
+    <!--
+      TS8 NAV overlay (design spec §6). Drawn above the map and the legacy navigation frame, and
+      only while navigating. Every value comes from the runtime NavigationState; nothing here is a
+      sample. Hidden by default so the launcher screens keep a clean map surface.
+    -->
+    <include
+      android:id="@+id/ts8_nav_overlay_include"
+      layout="@layout/ts8_nav_overlay"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone" />
+
+    <!--
+      TS8 NAV media bubble + bounded in-activity panel (design spec §7). Pinned lower-right,
+      above the route strip and therefore clear of the maneuver panel, speed panel and sign.
+    -->
+    <include
+      android:id="@+id/ts8_nav_media_include"
+      layout="@layout/ts8_nav_media"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone" />
+  </RelativeLayout>
+  <androidx.fragment.app.FragmentContainerView
+    android:id="@+id/place_page_container_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="app.organicmaps.widget.placepage.PlacePageController" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

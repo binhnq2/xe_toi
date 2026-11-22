@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite launcher strings. Vietnamese is the default: the product ships on Vietnamese head units,
+  so the fallback locale must already read correctly if a device reports an unsupported language.
+  English lives in values-en/.
+-->
+<resources>
+  <string name="ts8_search_hint">Bạn muốn đi đâu?</string>
+  <string name="ts8_settings">Cài đặt</string>
+  <string name="ts8_home_work">Về nhà</string>
+  <string name="ts8_favorites">Yêu thích</string>
+  <string name="ts8_now_playing">Đang phát</string>
+  <string name="ts8_tab_map">Bản đồ</string>
+  <string name="ts8_tab_music">Nhạc</string>
+  <string name="ts8_tab_assistant">Trợ lý</string>
+  <string name="ts8_tab_apps">Ứng dụng</string>
+
+  <string name="ts8_media_previous">Bài trước</string>
+  <string name="ts8_media_play">Phát</string>
+  <string name="ts8_media_pause">Tạm dừng</string>
+  <string name="ts8_media_next">Bài sau</string>
+  <string name="ts8_media_close">Đóng</string>
+
+  <string name="ts8_drawer_title">Ứng dụng</string>
+  <string name="ts8_drawer_search_hint">Tìm ứng dụng</string>
+  <string name="ts8_drawer_empty">Không có ứng dụng</string>
+  <string name="ts8_drawer_loading">Đang tải…</string>
+  <string name="ts8_drawer_pin">Ghim</string>
+  <string name="ts8_drawer_unpin">Bỏ ghim</string>
+  <string name="ts8_drawer_hide">Ẩn</string>
+  <string name="ts8_drawer_app_info">Thông tin ứng dụng</string>
+
+  <string name="ts8_music_title">Nhạc</string>
+  <string name="ts8_music_no_session">Không có ứng dụng nhạc nào đang phát.</string>
+  <string name="ts8_music_permission_required">Cần quyền truy cập thông báo để điều khiển nhạc.</string>
+  <string name="ts8_notification_access_label">Điều khiển nhạc TS8 NAV</string>
+  <string name="ts8_notification_access_open_settings">Cấp quyền</string>
+  <string name="ts8_unit_min">phút</string>
+  <string name="ts8_unit_hour">giờ</string>
+  <string name="ts8_unit_kmh">km/h</string>
+
+  <!-- Lớp phủ dẫn đường (design spec §6). -->
+  <string name="ts8_nav_eta">Đến</string>
+  <string name="ts8_nav_remaining">Còn lại</string>
+  <string name="ts8_nav_distance_label">Quãng đường</string>
+  <string name="ts8_nav_route_menu">Menu lộ trình</string>
+  <string name="ts8_nav_mute">Tắt hướng dẫn</string>
+  <string name="ts8_nav_unmute">Bật hướng dẫn</string>
+  <string name="ts8_nav_recenter">Về vị trí hiện tại</string>
+  <string name="ts8_nav_turn_right">Rẽ phải</string>
+  <string name="ts8_nav_turn_left">Rẽ trái</string>
+  <string name="ts8_nav_turn_slight_right">Đi bên phải</string>
+  <string name="ts8_nav_turn_slight_left">Đi bên trái</string>
+  <string name="ts8_nav_turn_sharp_right">Rẽ phải gắt</string>
+  <string name="ts8_nav_turn_sharp_left">Rẽ trái gắt</string>
+  <string name="ts8_nav_turn_uturn">Quay đầu</string>
+  <string name="ts8_nav_turn_straight">Đi thẳng</string>
+  <string name="ts8_nav_turn_roundabout">Vào vòng xuyến</string>
+  <string name="ts8_nav_turn_finish">Đã đến nơi</string>
+  <string name="ts8_nav_exit_number">Lối ra %1$d</string>
+  <string name="ts8_nav_no_gps">Đang chờ GPS</string>
+
+  <!-- Cài đặt (design spec §10). Chẩn đoán chỉ nằm ở đây, không hiện trên Home/Dẫn đường. -->
+  <string name="ts8_settings_title">Cài đặt</string>
+  <string name="ts8_settings_appearance">Giao diện</string>
+  <string name="ts8_settings_navigation">Dẫn đường</string>
+  <string name="ts8_settings_audio">Âm thanh</string>
+  <string name="ts8_settings_assistant">Trợ lý</string>
+  <string name="ts8_settings_devices">Thiết bị</string>
+  <string name="ts8_settings_diagnostics">Chẩn đoán</string>
+  <string name="ts8_settings_signs">Biển báo</string>
+  <string name="ts8_settings_maps">Bản đồ</string>
+
+  <string name="ts8_settings_theme">Chủ đề</string>
+  <string name="ts8_settings_display">Hiển thị</string>
+  <string name="ts8_settings_voice">Giọng nói</string>
+  <string name="ts8_theme_light">Sáng</string>
+  <string name="ts8_theme_dark">Tối</string>
+  <string name="ts8_theme_auto">Tự động</string>
+  <string name="ts8_theme_light_hint">Chủ đề áp dụng ngay sau khi chọn.</string>
+  <string name="ts8_theme_selected_format">✓ %1$s</string>
+  <string name="ts8_set_keep_screen_on">Giữ màn hình sáng</string>
+  <string name="ts8_set_large_fonts">Chữ lớn</string>
+  <string name="ts8_set_zoom_buttons">Nút thu phóng bản đồ</string>
+  <string name="ts8_set_voice">Bật hướng dẫn bằng giọng nói</string>
+  <string name="ts8_set_voice_note">Tắt sẽ dừng toàn bộ câu đọc hướng dẫn; cảnh báo tốc độ vẫn hiện trên màn hình.</string>
+
+  <string name="ts8_audio_engine">Bộ máy TTS</string>
+  <string name="ts8_audio_status">Trạng thái</string>
+  <string name="ts8_audio_vietnamese">Tiếng Việt</string>
+  <string name="ts8_audio_installed">đã cài</string>
+  <string name="ts8_audio_missing">chưa có</string>
+  <string name="ts8_audio_problem">Vấn đề</string>
+
+  <string name="ts8_assistant_title">Trợ lý</string>
+  <string name="ts8_assistant_idle">Nhấn để nói</string>
+  <string name="ts8_assistant_listening">Đang nghe…</string>
+  <string name="ts8_assistant_processing">Đang xử lý…</string>
+  <string name="ts8_assistant_offline">Đang dùng lệnh ngoại tuyến</string>
+  <string name="ts8_assistant_confirm">Xác nhận</string>
+  <string name="ts8_assistant_cancel">Huỷ</string>
+  <string name="ts8_assistant_start">Bắt đầu</string>
+  <string name="ts8_assistant_offline_note">Lệnh ngoại tuyến chạy không cần mạng.</string>
+  <string name="ts8_assistant_privacy_note">AI trực tuyến là tuỳ chọn; hết thời gian chờ sẽ quay về ngoại tuyến. Mặc định không ghi âm và không lưu lời thoại.</string>
+
+  <string name="ts8_devices_not_running">Cầu ESP32 chưa chạy. Ứng dụng vẫn hoạt động đầy đủ: bản đồ, dẫn đường, launcher và nhạc không phụ thuộc vào cầu này.</string>
+  <string name="ts8_esp32_usb_denied">Không được cấp quyền USB</string>
+  <string name="ts8_esp32_detached">Đã rút thiết bị</string>
+  <string name="ts8_esp32_no_device">Chưa gắn thiết bị ESP32</string>
+  <string name="ts8_esp32_no_cdc">Thiết bị không có cổng dữ liệu CDC</string>
+  <string name="ts8_search_unavailable">Tìm kiếm chưa sẵn sàng</string>
+
+  <string name="ts8_diagnostics_path">Đã xuất</string>
+  <string name="ts8_diagnostics_note">Chứa bộ đếm build/thiết bị/render/GPS/lộ trình/giọng nói. Không có lịch sử vị trí và không có dữ liệu bí mật.</string>
+
+  <string name="ts8_signs_count">Số điểm trong nhóm</string>
+  <string name="ts8_signs_show_on_map">Hiện biển báo trên bản đồ</string>
+  <string name="ts8_signs_download">Nạp biển báo quanh đây</string>
+  <string name="ts8_signs_hint">Biển báo, điểm nguy hiểm, trạm thu phí, cây xăng, bãi đỗ và trạm sạc có sẵn trong app. Nạp sẽ nhập các điểm gần nhất thành một nhóm bookmark và dùng được offline.</string>
+  <string name="ts8_signs_downloading">Đang tải biển báo…</string>
+  <string name="ts8_signs_loading">Đang nạp biển báo quanh đây…</string>
+  <string name="ts8_signs_need_map">Hãy mở bản đồ một lần rồi quay lại: lớp bookmark chỉ sẵn sàng sau khi map core khởi động.</string>
+  <string name="ts8_signs_imported">Đã nhập %1$d điểm biển báo.</string>
+
+  <string name="ts8_maps_folder">Thư mục bản đồ</string>
+  <string name="ts8_maps_free_space">Còn trống</string>
+  <string name="ts8_maps_vietnam">Vietnam.mwm</string>
+  <string name="ts8_maps_missing">chưa có</string>
+  <string name="ts8_maps_hint">File phải nằm trong thư mục phiên bản %1$s thì app mới nhận. Tính năng này copy file bạn chọn từ Downloads vào đúng thư mục đó.</string>
+  <string name="ts8_maps_import">Nhập file .mwm</string>
+  <string name="ts8_maps_importing">Đang nhập bản đồ…</string>
+  <string name="ts8_maps_progress">Đang copy: %1$d%%</string>
+  <string name="ts8_maps_import_ok">Đã nhập: %1$s</string>
+  <string name="ts8_maps_import_failed">Nhập thất bại: %1$s</string>
+  <string name="ts8_maps_wrong_ext">File phải có đuôi .mwm</string>
+  <string name="ts8_maps_not_enough_space">Không đủ chỗ trống, cần thêm %1$s</string>
+  <string name="ts8_maps_no_picker">Thiết bị không có ứng dụng chọn file</string>
+  <string name="ts8_maps_restart">Khởi động lại app</string>
+  <string name="ts8_maps_restart_needed">Khởi động lại app để nhận bản đồ mới.</string>
+</resources>

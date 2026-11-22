@@ -1,0 +1,10 @@
+• Dane map OSM z 8 lipca
+• Ulepszone wyszukiwanie dla arabskiego
+• Wyświetlanie obszarów kempingowych i kurortowych, wcześniejsze widzenie stref przemysłowych
+• Nieignorowanie dróg drugorzędnych na rondach
+• Nowe ikony dla stacji ładowania
+• Zapisywanie danych wysokości podczas zapisywania trasy
+• Naprawiono przycisk "Ponów nieudane pobieranie"
+• Naprawiono zduplikowane edycje OSM
+
+…więcej na omaps.org/pl/news

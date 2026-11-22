@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 NAV over-speed banner (PROMPT Phase 5 "Speed warning UX").
+
+  Rendered only while SpeedLimitState reports EXCEEDED. Values come from the runtime
+  RoutingInfo speed limit and the current GPS speed; nothing here is sampled.
+  Touch target is irrelevant (it is not interactive), so it never swallows map gestures.
+-->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_speed_warning"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_marginStart="@dimen/margin_half"
+  android:layout_marginBottom="@dimen/margin_half"
+  android:background="@drawable/ts8_over_speed_bg"
+  android:gravity="center_vertical"
+  android:orientation="horizontal"
+  android:paddingStart="@dimen/margin_base"
+  android:paddingTop="@dimen/margin_half"
+  android:paddingEnd="@dimen/margin_base"
+  android:paddingBottom="@dimen/margin_half"
+  android:visibility="gone"
+  tools:visibility="visible">
+
+  <TextView
+    android:id="@+id/nav_speed_warning_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:text="@string/ts8_over_speed_warning"
+    android:textColor="@color/white_primary"
+    android:textSize="16sp"
+    android:textStyle="bold" />
+
+  <TextView
+    android:id="@+id/nav_speed_warning_delta"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_half"
+    android:includeFontPadding="false"
+    android:maxLines="1"
+    android:textColor="@color/white_primary"
+    android:textSize="16sp"
+    tools:text="+12 km/h" />
+</LinearLayout>

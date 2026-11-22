@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TS8 Lite design tokens (design spec §4).
+
+  These are the only colours the launcher shell may use. Keeping them in one file is what makes
+  day/night a single override instead of a hunt through layouts.
+
+  The reference screenshot is a visual guide, not an asset: nothing here samples it.
+-->
+<resources>
+  <!-- surfaces: dark is the primary driving theme -->
+  <color name="ts8_bg">#FF081118</color>
+  <color name="ts8_surface">#FF13212B</color>
+  <color name="ts8_surface_raised">#FF1B2C38</color>
+  <color name="ts8_divider">#22FFFFFF</color>
+
+  <!-- text -->
+  <color name="ts8_text_primary">#FFF4F7FA</color>
+  <color name="ts8_text_secondary">#FFAAB8C4</color>
+  <color name="ts8_text_disabled">#66AAB8C4</color>
+
+  <!-- semantic -->
+  <!-- ts8_accent already lives in colors.xml from the navigation campaign; not redefined here,
+       because duplicate resource names fail the merge. -->
+  <color name="ts8_warning">#FFFFBE55</color>
+  <color name="ts8_danger">#FFE84D5B</color>
+  <color name="ts8_accent_pressed">#FF2BB8AF</color>
+  <color name="ts8_dock_selected">#FF16303A</color>
+
+  <!-- day theme overrides -->
+  <color name="ts8_bg_day">#FFF2F5F8</color>
+  <color name="ts8_surface_day">#FFFFFFFF</color>
+  <color name="ts8_text_primary_day">#FF0C1720</color>
+  <color name="ts8_text_secondary_day">#FF4A5A67</color>
+</resources>

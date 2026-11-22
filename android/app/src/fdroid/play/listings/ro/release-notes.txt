@@ -1,0 +1,13 @@
+• OSM map data as of July 8
+• Improved search for the Arabic language
+• Display campsite and resort areas, see industrial zones earlier
+• Do not ignore secondary roads at roundabouts
+• New icons for charging stations
+• Save elevation data when saving a route
+• Fixed "Retry failed download" button
+• Fixed duplicated OSM edits
+• Fixed OSM login on some devices
+• Fixed crosshair jump when adding objects to OSM
+• Fixed GPX/KML import error on Android 5
+
+…more at omaps.org/news

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TS8 Lite app drawer (design spec §8). Phase 1: search field + empty state + dock. -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/ts8_bg"
+  android:orientation="vertical"
+  android:paddingStart="@dimen/ts8_gap_l"
+  android:paddingTop="@dimen/ts8_gap_l"
+  android:paddingEnd="@dimen/ts8_gap_l">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/ts8_drawer_title"
+    android:textColor="@color/ts8_text_primary"
+    android:textSize="@dimen/ts8_text_primary"
+    android:textStyle="bold" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ts8_search_pill_height"
+    android:layout_marginTop="@dimen/ts8_gap_m"
+    android:background="@drawable/ts8_search_pill"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ts8_gap_m"
+    android:paddingEnd="@dimen/ts8_gap_m">
+
+    <ImageView
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:contentDescription="@string/ts8_drawer_search_hint"
+      android:src="@android:drawable/ic_menu_search"
+      app:tint="@color/ts8_text_secondary" />
+
+    <EditText
+      android:id="@+id/ts8_drawer_search"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/ts8_gap_s"
+      android:background="@null"
+      android:hint="@string/ts8_drawer_search_hint"
+      android:imeOptions="actionSearch"
+      android:importantForAutofill="no"
+      android:inputType="text"
+      android:singleLine="true"
+      android:textColor="@color/ts8_text_primary"
+      android:textColorHint="@color/ts8_text_secondary"
+      android:textSize="@dimen/ts8_text_secondary" />
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/ts8_drawer_grid"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clipToPadding="false"
+      android:paddingTop="@dimen/ts8_gap_m"
+      android:paddingBottom="@dimen/ts8_gap_m"
+      android:scrollbars="none" />
+
+    <TextView
+      android:id="@+id/ts8_drawer_empty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="@string/ts8_drawer_loading"
+      android:textColor="@color/ts8_text_secondary"
+      android:textSize="@dimen/ts8_text_secondary" />
+  </FrameLayout>
+
+  <!-- Shared four-tab dock -->
+  <include
+    layout="@layout/ts8_dock"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ts8_dock_height"
+    android:layout_marginBottom="@dimen/ts8_gap_m" />
+</LinearLayout>
