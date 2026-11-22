@@ -2580,8 +2580,12 @@ public class MwmActivity extends BaseMwmFragmentActivity
       ArrayList<MenuBottomSheetItem> items = new ArrayList<>();
       items.add(new MenuBottomSheetItem(R.string.placepage_add_place_button, R.drawable.ic_plus,
                                         this::onAddPlaceOptionSelected));
-      items.add(new MenuBottomSheetItem(R.string.download_maps, R.drawable.ic_download, getDownloadMapsCounter(),
-                                        this::onDownloadMapsOptionSelected));
+      if (!BuildConfig.TS8_LITE)
+      {
+        // TS8 Lite never downloads maps: they are preinstalled on the head unit.
+        items.add(new MenuBottomSheetItem(R.string.download_maps, R.drawable.ic_download, getDownloadMapsCounter(),
+                                          this::onDownloadMapsOptionSelected));
+      }
       mDonatesUrl = Config.getDonateUrl(getApplicationContext());
       if (!TextUtils.isEmpty(mDonatesUrl))
         items.add(new MenuBottomSheetItem(R.string.donate, R.drawable.ic_donate, this::onDonateOptionSelected));

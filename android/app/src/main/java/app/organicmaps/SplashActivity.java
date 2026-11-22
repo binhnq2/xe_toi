@@ -188,6 +188,13 @@ public class SplashActivity extends AppCompatActivity
     {
       intent.setComponent(new ComponentName(this, DownloaderActivity.class));
     }
+    else if (BuildConfig.TS8_LITE)
+    {
+      // TS8 Lite ships with its maps preinstalled on the head unit (Android/data/<pkg>/files/
+      // <countriesVersion>/), and Storage has already scanned them during core init. The downloader
+      // screen is not part of this product, so go straight to the map.
+      intent.setComponent(new ComponentName(this, MwmActivity.class));
+    }
     else
     {
       intent.setComponent(new ComponentName(this, DownloadResourcesLegacyActivity.class));
